@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<h2 style="text-align: center">Books</h2>
+
+{% if books %}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>AUTHOR</th>
+        <th>PRICE</th>
+        <th>MODIFY</th>
+    </tr>
+    {% for i in books %}
+    <tr>
+        <td style="border-radius: 10px 0px 0px 10px">{{i.id}}</td>
+        <td style="text-align: left">{{i.title}}</td>
+        <td style="text-align: left">{{i.author}}</td>
+        <td>{{i.price}}</td>
+        <td style="border-radius: 0px 10px 10px 0px">
+            <a href="/books/edit/{{i.id}}">Edit</a>
+            <a href="/books/delete/{{i.id}}" onclick="confirm('Do you want to delete the book')">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h3>Sorry! could not retrieve details of books</h3>
+{% endif %}
+
+{% endblock %}

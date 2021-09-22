@@ -1,0 +1,13 @@
+CREATE TABLE authors (
+id integer PRIMARY KEY AUTOINCREMENT,
+name varchar(30),
+email varchar(50) UNIQUE,
+mobile varchar(10)
+);
+
+insert into authors(name,email,mobile) values
+('Miranda Kerr', 'mirandakerr@gmail.com', 9398748009),
+('Candice Swanepoel', 'candiceswanepoel@gmail.com', 9849723652),
+('Josephine Skriver', 'josephineskriver@gmail.com', 9701982365),
+('Kelsey Merritt', 'kelseymerritt@gmail.com', 9597227959),
+('Maya Stepper', 'mayastepper@gmail.com', 9298742024);

@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<h2>Summary</h2>
+<h2><span>Number of Books </span>{{summary.count}}</h2>
+<h2><span>Average Price </span>{{summary.avg_price | floatformat:2}}</h2>
+
+{% endblock %}

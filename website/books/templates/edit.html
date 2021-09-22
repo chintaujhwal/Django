@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<h2>Edit Book</h2>
+
+{% if form %}
+<form method="post">
+    {% csrf_token %}
+    Title<br>
+    {{form.title}}
+    <br><br>
+    Author<br>
+    {{form.author}}
+    <br><br>
+    Price<br>
+    {{form.price}}
+    <br><br>
+    <input type="submit">
+</form>
+{% else %}
+<h3>{{message}}</h3>
+{% endif %}
+
+{% endblock %}
